@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List Form</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Grocery Items Form</h1>
+        <form id="groceryForm">
+            <!-- Text Input -->
+            <label for="itemName">Item Name:</label>
+            <input type="text" id="itemName" name="itemName" placeholder="Enter item name" required>
+
+            <!-- Number Input -->
+            <label for="itemQuantity">Quantity:</label>
+            <input type="number" id="itemQuantity" name="itemQuantity" min="1" placeholder="Enter quantity" required>
+
+            <!-- Radio Buttons -->
+            <label>Category:</label>
+            <div class="radio-group">
+                <input type="radio" id="vegetables" name="category" value="Vegetables" required>
+                <label for="vegetables">Veggies & Fruits</label>
+
+                <input type="radio" id="fruits" name="category" value="Fruits" required>
+                <label for="fruits">Meat & Seafood</label>
+                <input type="radio" id="dairy" name="category" value="Dairy" required>
+                <label for="dairy">Dairy & Beverages</label>
+
+                <input type="radio" id="house" name="category" value="house" required>
+                <label for="house">Household & Personal Care</label>
+            </div>
+
+            <!-- Checkboxes -->
+            <label>Choose Tags:</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="organic" name="tags" value="Organic">
+                <label for="organic">Organic</label>
+
+                <input type="checkbox" id="fresh" name="tags" value="Fresh">
+                <label for="fresh">Fresh</label>
+
+                <input type="checkbox" id="frozen" name="tags" value="Frozen">
+                <label for="frozen">Frozen</label>
+            </div>
+
+            <!-- Text Area -->
+            <label for="additionalNotes">Item Description:</label>
+            <textarea id="additionalNotes" name="additionalNotes" placeholder="Enter any additional item details..."></textarea>
+
+            <!-- Buttons -->
+            <button type="button" onclick="addItem()">Add Item</button>
+            <button type="button" onclick="saveItems()">Save</button>
+        </form>
+        <div id="itemList"></div>
+    </div>
+
+    <div id="popup" class="popup"></div>
+
+    <script src="index.js"></script>
+</body>
+</html>
